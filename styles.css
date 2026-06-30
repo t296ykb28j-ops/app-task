@@ -211,6 +211,21 @@ body {
 .grade-miss { background: var(--ink-3); color: var(--paper); }
 .grade:active { transform: translateY(1px); }
 
+/* ── Grade feedback animations ────────── */
+.confetti-layer { position: fixed; inset: 0; pointer-events: none; z-index: 200; overflow: hidden; }
+.confetti-piece { position: fixed; top: 0; left: 0; will-change: transform, opacity; }
+
+.grade-got.is-pop { animation: gradePop .35s ease; }
+@keyframes gradePop { 0% { transform: none; } 45% { transform: scale(1.06); } 100% { transform: none; } }
+
+.grade-miss.is-gloom { animation: gradeGloom .75s ease; }
+@keyframes gradeGloom {
+  0%   { background: var(--ink-3); color: var(--paper); }
+  30%  { background: #0b0c0f; color: var(--ink-faint); transform: translateY(1px) scale(.985); }
+  60%  { background: #0b0c0f; color: var(--ink-faint); }
+  100% { background: var(--ink-3); color: var(--paper); transform: none; }
+}
+
 /* ── Done ─────────────────────────────── */
 .done-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 18px var(--pad) 8px; text-align: center; gap: 6px; overflow-y: auto; -webkit-overflow-scrolling: touch; }
 .done-seal {
@@ -265,4 +280,5 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .flashcard-inner, .session-bar-fill, .actions, .toast { transition: none; }
+  .grade-got.is-pop, .grade-miss.is-gloom { animation: none; }
 }

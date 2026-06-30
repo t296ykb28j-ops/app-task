@@ -163,18 +163,89 @@ function flipCard() {
   $('#actions').classList.toggle('is-ready', flipped);
 }
 
+/* ── Grade feedback animations ────────── */
+let grading = false;
+const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let confettiLayer;
+
+function celebrate(originEl) {
+  if (reduceMotion() || !originEl) return;
+  if (!confettiLayer) {
+    confettiLayer = document.createElement('div');
+    confettiLayer.className = 'confetti-layer';
+    document.body.appendChild(confettiLayer);
+  }
+  const r = originEl.getBoundingClientRect();
+  const ox = r.left + r.width / 2;
+  const oy = r.top + r.height / 2;
+  const colors = ['#2E8B72', '#3FA98C', '#C8341B', '#C39A4A', '#F6F2E9'];
+  const N = 18;
+  for (let i = 0; i < N; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    const size = 6 + Math.random() * 6;
+    piece.style.width = size + 'px';
+    piece.style.height = (size * (0.55 + Math.random() * 0.7)).toFixed(1) + 'px';
+    piece.style.left = ox + 'px';
+    piece.style.top = oy + 'px';
+    piece.style.background = colors[i % colors.length];
+    piece.style.borderRadius = Math.random() < 0.5 ? '2px' : '50%';
+    confettiLayer.appendChild(piece);
+
+    const angle = (-Math.PI / 2) + (Math.random() - 0.5) * Math.PI * 0.9; // mostly upward
+    const dist = 55 + Math.random() * 95;
+    const dx = Math.cos(angle) * dist;
+    const peak = Math.sin(angle) * dist;            // negative = rises
+    const fall = 110 + Math.random() * 130;
+    const rot = (Math.random() - 0.5) * 720;
+    const dur = 700 + Math.random() * 500;
+    const anim = piece.animate([
+      { transform: 'translate(-50%,-50%) translate(0,0) rotate(0deg)', opacity: 1 },
+      { transform: `translate(-50%,-50%) translate(${dx * 0.6}px, ${peak}px) rotate(${rot * 0.5}deg)`, opacity: 1, offset: 0.35 },
+      { transform: `translate(-50%,-50%) translate(${dx}px, ${fall}px) rotate(${rot}deg)`, opacity: 0 }
+    ], { duration: dur, easing: 'cubic-bezier(.18,.7,.32,1)' });
+    anim.onfinish = () => piece.remove();
+  }
+}
+
+function pop(btn) {
+  if (reduceMotion() || !btn) return;
+  btn.classList.remove('is-pop'); void btn.offsetWidth; btn.classList.add('is-pop');
+  setTimeout(() => btn.classList.remove('is-pop'), 380);
+}
+
+function gloom(btn) {
+  if (reduceMotion() || !btn) return;
+  btn.classList.remove('is-gloom'); void btn.offsetWidth; btn.classList.add('is-gloom');
+  setTimeout(() => btn.classList.remove('is-gloom'), 780);
+}
+
 function grade(result) {
-  if (!flipped) return;
+  if (!flipped || grading) return;
+  grading = true;
   const card = deck[pos];
   const p = prog(card.id);
-  if (result === 'got') { p.box = Math.min(5, p.box + 1); p.got++; state.totals.got++; roundGot++; }
-  else                  { p.box = 1;                      p.miss++; state.totals.miss++; roundMiss++; roundMissedCards.push(card); }
+  const gotBtn = $('.grade-got');
+  const missBtn = $('.grade-miss');
+
+  if (result === 'got') {
+    p.box = Math.min(5, p.box + 1); p.got++; state.totals.got++; roundGot++;
+    pop(gotBtn); celebrate(gotBtn);
+  } else {
+    p.box = 1; p.miss++; state.totals.miss++; roundMiss++; roundMissedCards.push(card);
+    gloom(missBtn);
+  }
   p.last = now();
   saveState();
 
-  pos++;
-  if (pos >= deck.length) finishSession();
-  else renderCard();
+  const delay = reduceMotion() ? 0 : (result === 'got' ? 420 : 560);
+  setTimeout(() => {
+    grading = false;
+    if (!$('#study').classList.contains('is-active')) return; // user navigated away
+    pos++;
+    if (pos >= deck.length) finishSession();
+    else renderCard();
+  }, delay);
 }
 
 function finishSession() {
