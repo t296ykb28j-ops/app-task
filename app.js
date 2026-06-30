@@ -59,6 +59,7 @@ let deck = [];
 let pos = 0;
 let flipped = false;
 let roundGot = 0, roundMiss = 0;
+let roundMissedCards = [];
 
 /* ───────────────────────── Views ───────────────────────── */
 function show(id) {
@@ -116,7 +117,7 @@ function startSession() {
     chosen = chosen.concat(rest.slice(0, SESSION_SIZE - chosen.length));
   }
   deck = shuffle(chosen).slice(0, SESSION_SIZE);  // random order
-  pos = 0; roundGot = 0; roundMiss = 0;
+  pos = 0; roundGot = 0; roundMiss = 0; roundMissedCards = [];
   show('study');
   renderCard();
 }
@@ -167,7 +168,7 @@ function grade(result) {
   const card = deck[pos];
   const p = prog(card.id);
   if (result === 'got') { p.box = Math.min(5, p.box + 1); p.got++; state.totals.got++; roundGot++; }
-  else                  { p.box = 1;                      p.miss++; state.totals.miss++; roundMiss++; }
+  else                  { p.box = 1;                      p.miss++; state.totals.miss++; roundMiss++; roundMissedCards.push(card); }
   p.last = now();
   saveState();
 
@@ -182,6 +183,25 @@ function finishSession() {
   $('#done-got').textContent = roundGot;
   $('#done-miss').textContent = roundMiss;
   $('#done-rate').textContent = total ? Math.round(roundGot / total * 100) + '%' : '0%';
+
+  const block = $('#missed-block');
+  const list = $('#missed-list');
+  list.innerHTML = '';
+  if (roundMissedCards.length) {
+    roundMissedCards.forEach(c => {
+      const li = document.createElement('li');
+      li.className = 'missed-item';
+      const f = document.createElement('span');
+      f.className = 'm-front'; f.textContent = c.front;
+      const b = document.createElement('span');
+      b.className = 'm-back'; b.textContent = c.back;
+      li.appendChild(f); li.appendChild(b);
+      list.appendChild(li);
+    });
+    block.hidden = false;
+  } else {
+    block.hidden = true;
+  }
   show('done');
 }
 

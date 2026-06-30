@@ -1,5 +1,5 @@
 /* Bump CACHE when you change any shell file, to push updates to installed apps. */
-const CACHE = 'mandarin-deck-v3';
+const CACHE = 'mandarin-deck-v4';
 
 const SHELL = [
   './',
