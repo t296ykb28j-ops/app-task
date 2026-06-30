@@ -32,6 +32,13 @@ After editing, bump `CACHE = 'mandarin-deck-v2'` in `sw.js` (e.g. `-v3`) so inst
 ## Notes on the data
 Cards are pinyin and English only. Pinyin from the source notes was normalised to standard tone diacritics (e.g. `Niˇ` → `nǐ`), and a few obvious tone typos in the original were corrected (e.g. `wǒ` is third tone).
 
+## If the home-screen icon doesn't show
+The installed app showing a letter tile instead of the icon almost always means the icon files 404'd. Check:
+1. The repo has an `icons/` folder at the same level as `index.html`, with the PNGs inside it (paths are case-sensitive on GitHub Pages — `icons/icon-512.png`, not `Icons/`).
+2. Visit `https://<user>.github.io/<repo>/icons/icon-512.png` directly — it must load.
+3. `favicon.svg` sits in the repo root (next to `index.html`).
+4. If you'd already added the app to your home screen, **remove it and re-add** — iOS caches the old icon aggressively. Bumping `CACHE` in `sw.js` (now `v3`) also forces the service worker to refetch.
+
 ## Files
 | File | Purpose |
 |------|---------|
@@ -41,7 +48,8 @@ Cards are pinyin and English only. Pinyin from the source notes was normalised t
 | `cards.json` | The deck — edit this to add cards |
 | `manifest.json` | PWA metadata |
 | `sw.js` | Service worker (offline cache) |
-| `icons/` | App icons incl. `apple-touch-icon.png` |
+| `favicon.svg` | Browser-tab icon (repo root) |
+| `icons/` | App icons incl. `apple-touch-icon.png` and favicons |
 
 ## Keyboard shortcuts (desktop testing)
 `Space`/`Enter` flip · `→` got it · `←` missed

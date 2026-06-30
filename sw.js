@@ -1,5 +1,5 @@
 /* Bump CACHE when you change any shell file, to push updates to installed apps. */
-const CACHE = 'mandarin-deck-v2';
+const CACHE = 'mandarin-deck-v3';
 
 const SHELL = [
   './',
@@ -7,10 +7,14 @@ const SHELL = [
   './styles.css',
   './app.js',
   './manifest.json',
+  './favicon.svg',
+  './icons/favicon-32.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-maskable-512.png',
-  './icons/apple-touch-icon.png'
+  './icons/apple-touch-icon.png',
+  './icons/apple-touch-icon-152.png',
+  './icons/apple-touch-icon-167.png'
 ];
 
 self.addEventListener('install', event => {
