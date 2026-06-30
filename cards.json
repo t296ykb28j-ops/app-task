@@ -1,0 +1,552 @@
+{
+  "meta": {
+    "language": "Mandarin Chinese",
+    "source": "Mandarin Note .docx",
+    "note": "Pinyin uses standard tone diacritics. Each card is pinyin (front) and English (back) only. Categories: time, food, verbs, grammar, places, jobs, words, phrases.",
+    "version": 2
+  },
+  "categories": {
+    "time": "Time & days",
+    "food": "Food & drink",
+    "verbs": "Verbs",
+    "grammar": "Grammar & patterns",
+    "places": "Places & rooms",
+    "jobs": "Jobs",
+    "words": "Useful words",
+    "phrases": "Sentences"
+  },
+  "cards": [
+    {
+      "id": 1,
+      "front": "lǐbài tiān",
+      "back": "Sunday",
+      "category": "time",
+      "type": "vocab"
+    },
+    {
+      "id": 2,
+      "front": "zǎoshang",
+      "back": "in the morning",
+      "category": "time",
+      "type": "vocab"
+    },
+    {
+      "id": 3,
+      "front": "zhōngwǔ",
+      "back": "at noon",
+      "category": "time",
+      "type": "vocab"
+    },
+    {
+      "id": 4,
+      "front": "xiàwǔ",
+      "back": "in the afternoon",
+      "category": "time",
+      "type": "vocab"
+    },
+    {
+      "id": 5,
+      "front": "wǎnshang",
+      "back": "at night",
+      "category": "time",
+      "type": "vocab"
+    },
+    {
+      "id": 6,
+      "front": "zǎocān",
+      "back": "breakfast",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 7,
+      "front": "wǎncān",
+      "back": "dinner",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 8,
+      "front": "shuǐguǒ",
+      "back": "fruit",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 9,
+      "front": "jiānguǒ",
+      "back": "nuts",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 10,
+      "front": "guǒzhī",
+      "back": "juice",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 11,
+      "front": "guǒxī",
+      "back": "smoothie",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 12,
+      "front": "xiāngjiāo",
+      "back": "banana",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 13,
+      "front": "cǎoméi",
+      "back": "strawberry",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 14,
+      "front": "lánméi",
+      "back": "blueberry",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 15,
+      "front": "niúnǎi",
+      "back": "milk",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 16,
+      "front": "xìngrén nǎi",
+      "back": "almond milk",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 17,
+      "front": "xiāngcǎo",
+      "back": "vanilla",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 18,
+      "front": "chǎofàn",
+      "back": "fried rice",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 19,
+      "front": "chǎomiàn",
+      "back": "fried noodles",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 20,
+      "front": "chǎodàn",
+      "back": "scrambled egg",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 21,
+      "front": "shuǐzhǔ dàn",
+      "back": "hard-boiled egg",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 22,
+      "front": "ōumǔ dàn",
+      "back": "omelette",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 23,
+      "front": "jiàng",
+      "back": "sauce",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 24,
+      "front": "yóu",
+      "back": "oil",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 25,
+      "front": "fānqié",
+      "back": "tomato",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 26,
+      "front": "fānqié jiàng",
+      "back": "ketchup",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 27,
+      "front": "jiàngyóu",
+      "back": "soy sauce",
+      "category": "food",
+      "type": "vocab"
+    },
+    {
+      "id": 28,
+      "front": "xiǎng",
+      "back": "to want; to miss",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 29,
+      "front": "xiǎng yào",
+      "back": "to want (to)",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 30,
+      "front": "zhǔnbèi",
+      "back": "to prepare",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 31,
+      "front": "fàng",
+      "back": "to put",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 32,
+      "front": "chǎo",
+      "back": "to stir-fry",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 33,
+      "front": "hē",
+      "back": "to drink",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 34,
+      "front": "chī",
+      "back": "to eat",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 35,
+      "front": "qù",
+      "back": "to go",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 36,
+      "front": "gōngzuò",
+      "back": "to work; a job",
+      "category": "verbs",
+      "type": "vocab"
+    },
+    {
+      "id": 37,
+      "front": "zhège",
+      "back": "this",
+      "category": "words",
+      "type": "vocab"
+    },
+    {
+      "id": 38,
+      "front": "nàge",
+      "back": "that",
+      "category": "words",
+      "type": "vocab"
+    },
+    {
+      "id": 39,
+      "front": "lǐmiàn",
+      "back": "inside (place + lǐmiàn)",
+      "category": "words",
+      "type": "vocab"
+    },
+    {
+      "id": 40,
+      "front": "wàimiàn",
+      "back": "outside (place + wàimiàn)",
+      "category": "words",
+      "type": "vocab"
+    },
+    {
+      "id": 41,
+      "front": "zìsī",
+      "back": "selfish",
+      "category": "words",
+      "type": "vocab"
+    },
+    {
+      "id": 42,
+      "front": "shàng",
+      "back": "above; up",
+      "category": "words",
+      "type": "vocab"
+    },
+    {
+      "id": 43,
+      "front": "xià",
+      "back": "below; down",
+      "category": "words",
+      "type": "vocab"
+    },
+    {
+      "id": 44,
+      "front": "jiā",
+      "back": "home",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 45,
+      "front": "jiànshēnfáng",
+      "back": "gym",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 46,
+      "front": "cèsuǒ / xǐshǒujiān",
+      "back": "bathroom",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 47,
+      "front": "kètīng",
+      "back": "living room",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 48,
+      "front": "fángjiān",
+      "back": "room (bedroom)",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 49,
+      "front": "shūfáng",
+      "back": "study room",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 50,
+      "front": "chúfáng",
+      "back": "kitchen",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 51,
+      "front": "túshūguǎn",
+      "back": "library",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 52,
+      "front": "dìxiàshì",
+      "back": "basement",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 53,
+      "front": "gélóu",
+      "back": "attic",
+      "category": "places",
+      "type": "vocab"
+    },
+    {
+      "id": 54,
+      "front": "chúshī",
+      "back": "chef",
+      "category": "jobs",
+      "type": "vocab"
+    },
+    {
+      "id": 55,
+      "front": "jiàoliàn",
+      "back": "coach",
+      "category": "jobs",
+      "type": "vocab"
+    },
+    {
+      "id": 56,
+      "front": "xiǎng (yào) + V.",
+      "back": "want to (do something)",
+      "category": "grammar",
+      "type": "grammar"
+    },
+    {
+      "id": 57,
+      "front": "xiǎng yào + N.",
+      "back": "to want something",
+      "category": "grammar",
+      "type": "grammar"
+    },
+    {
+      "id": 58,
+      "front": "xiǎng + N.",
+      "back": "to miss something",
+      "category": "grammar",
+      "type": "grammar"
+    },
+    {
+      "id": 59,
+      "front": "place + lǐmiàn / wàimiàn",
+      "back": "inside / outside a place",
+      "category": "grammar",
+      "type": "grammar"
+    },
+    {
+      "id": 60,
+      "front": "gānggāng + (past)",
+      "back": "just now — marks a recent past action",
+      "category": "grammar",
+      "type": "grammar"
+    },
+    {
+      "id": 61,
+      "front": "le",
+      "back": "completed-action marker (past)",
+      "category": "grammar",
+      "type": "grammar"
+    },
+    {
+      "id": 62,
+      "front": "huì + V.",
+      "back": "will / going to (future)",
+      "category": "grammar",
+      "type": "grammar"
+    },
+    {
+      "id": 63,
+      "front": "nǐ zuò le shénme?",
+      "back": "What did you do?",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 64,
+      "front": "nǐ lǐbài tiān zuò le shénme?",
+      "back": "What did you do on Sunday?",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 65,
+      "front": "xiǎng yào chī lā miàn",
+      "back": "(I) want to eat ramen",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 66,
+      "front": "nǐ zài nǎlǐ?",
+      "back": "Where are you?",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 67,
+      "front": "wǒ zài jiā",
+      "back": "I am home",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 68,
+      "front": "wǒ wǎnshang qù jiànshēnfáng",
+      "back": "I go to the gym at night",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 69,
+      "front": "wǒ wǎnshang qù le jiànshēnfáng",
+      "back": "I went to the gym at night",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 70,
+      "front": "wǒ wǎnshang huì qù jiànshēnfáng",
+      "back": "I will go to the gym at night",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 71,
+      "front": "nǐ zǎoshang de guǒxī lǐmiàn fàng le shénme?",
+      "back": "What did you put in your smoothie this morning?",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 72,
+      "front": "nǐ zǎoshang de guǒxī lǐmiàn yǒu shénme?",
+      "back": "What was inside your morning smoothie?",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 73,
+      "front": "zhǐ zhǔnbèi le wǒ de guǒxī",
+      "back": "(I) only prepared my smoothie",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 74,
+      "front": "nǐ de ōumǔ dàn lǐmiàn xiǎng yào fàng shénme?",
+      "back": "What do you want to put in your omelette?",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 75,
+      "front": "wǒ gānggāng qù le jiànshēnfáng",
+      "back": "I just went to the gym",
+      "category": "phrases",
+      "type": "phrase"
+    },
+    {
+      "id": 76,
+      "front": "wǒ gānggāng hē le guǒxī",
+      "back": "I just drank a smoothie",
+      "category": "phrases",
+      "type": "phrase"
+    }
+  ]
+}

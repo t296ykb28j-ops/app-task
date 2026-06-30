@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <title>Mandarin Deck</title>
+  <meta name="description" content="Flashcards and spaced-repetition practice for Mandarin notes." />
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#15171C" />
+
+  <!-- iOS standalone / home-screen behavior -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mandarin" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+
+    <!-- ───────── HOME ───────── -->
+    <section id="home" class="view is-active">
+      <header class="topbar">
+        <div class="brand"><span class="seal"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><polygon points="97.00,50.00 79.78,46.34 79.78,53.66"/><polygon points="90.70,73.50 77.62,61.72 73.96,68.05"/><polygon points="73.50,90.70 68.05,73.96 61.72,77.62"/><polygon points="50.00,97.00 53.66,79.78 46.34,79.78"/><polygon points="26.50,90.70 38.28,77.62 31.95,73.96"/><polygon points="9.30,73.50 26.04,68.05 22.38,61.72"/><polygon points="3.00,50.00 20.22,53.66 20.22,46.34"/><polygon points="9.30,26.50 22.38,38.28 26.04,31.95"/><polygon points="26.50,9.30 31.95,26.04 38.28,22.38"/><polygon points="50.00,3.00 46.34,20.22 53.66,20.22"/><polygon points="73.50,9.30 61.72,22.38 68.05,26.04"/><polygon points="90.70,26.50 73.96,31.95 77.62,38.28"/><circle cx="50" cy="50" r="24.5"/></g></svg></span><span class="brand-name">Mandarin Deck</span></div>
+        <button class="icon-btn" data-go="stats" aria-label="Progress">▣</button>
+      </header>
+
+      <div class="home-body">
+        <p class="eyebrow">Today</p>
+        <div class="dash">
+          <div class="dash-cell"><span class="dash-num" id="dash-due">0</span><span class="dash-lbl">due now</span></div>
+          <div class="dash-cell"><span class="dash-num" id="dash-mastered">0</span><span class="dash-lbl">mastered</span></div>
+          <div class="dash-cell"><span class="dash-num" id="dash-acc">—</span><span class="dash-lbl">accuracy</span></div>
+        </div>
+
+        <p class="eyebrow">Study set</p>
+        <div id="cat-chips" class="chips"></div>
+
+        <p class="eyebrow">Direction</p>
+        <div class="seg" id="dir-seg">
+          <button class="seg-btn is-on" data-dir="pinyin">Pinyin → English</button>
+          <button class="seg-btn" data-dir="english">English → Pinyin</button>
+        </div>
+
+        <button class="primary" id="start-btn">Start session</button>
+      </div>
+    </section>
+
+    <!-- ───────── STUDY ───────── -->
+    <section id="study" class="view">
+      <header class="topbar">
+        <button class="icon-btn" data-go="home" aria-label="Back">‹</button>
+        <div class="session-bar"><div class="session-bar-fill" id="sbar"></div></div>
+        <span class="count" id="study-count">0/0</span>
+      </header>
+
+      <div class="card-stage">
+        <div class="flashcard" id="card" role="button" tabindex="0" aria-label="Tap to flip card">
+          <div class="flashcard-inner" id="card-inner">
+            <div class="face face-front">
+              <span class="face-tag" id="front-tag"></span>
+              <p class="prompt" id="front-text"></p>
+              <span class="flip-hint">tap to flip</span>
+            </div>
+            <div class="face face-back">
+              <p class="answer" id="back-text"></p>
+              <p class="answer-sub" id="back-sub"></p>
+              <div class="pips" id="back-pips" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions" id="actions">
+        <button class="grade grade-miss" data-grade="miss">Missed</button>
+        <button class="grade grade-got" data-grade="got">Got it</button>
+      </div>
+    </section>
+
+    <!-- ───────── DONE ───────── -->
+    <section id="done" class="view">
+      <header class="topbar">
+        <button class="icon-btn" data-go="home" aria-label="Home">‹</button>
+        <span></span><span></span>
+      </header>
+      <div class="done-body">
+        <span class="done-seal"><svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><polygon points="97.00,50.00 79.78,46.34 79.78,53.66"/><polygon points="90.70,73.50 77.62,61.72 73.96,68.05"/><polygon points="73.50,90.70 68.05,73.96 61.72,77.62"/><polygon points="50.00,97.00 53.66,79.78 46.34,79.78"/><polygon points="26.50,90.70 38.28,77.62 31.95,73.96"/><polygon points="9.30,73.50 26.04,68.05 22.38,61.72"/><polygon points="3.00,50.00 20.22,53.66 20.22,46.34"/><polygon points="9.30,26.50 22.38,38.28 26.04,31.95"/><polygon points="26.50,9.30 31.95,26.04 38.28,22.38"/><polygon points="50.00,3.00 46.34,20.22 53.66,20.22"/><polygon points="73.50,9.30 61.72,22.38 68.05,26.04"/><polygon points="90.70,26.50 73.96,31.95 77.62,38.28"/><circle cx="50" cy="50" r="24.5"/></g></svg></span>
+        <h2 class="done-title">Session complete</h2>
+        <div class="done-stats">
+          <div><span id="done-got">0</span><small>got it</small></div>
+          <div><span id="done-miss">0</span><small>missed</small></div>
+          <div><span id="done-rate">0%</span><small>this round</small></div>
+        </div>
+        <button class="primary" id="again-btn">Study again</button>
+        <button class="ghost" data-go="home">Back to home</button>
+      </div>
+    </section>
+
+    <!-- ───────── STATS ───────── -->
+    <section id="stats" class="view">
+      <header class="topbar">
+        <button class="icon-btn" data-go="home" aria-label="Home">‹</button>
+        <span class="screen-title">Progress</span><span></span>
+      </header>
+      <div class="stats-body">
+        <p class="eyebrow">Leitner boxes</p>
+        <p class="hint">A card moves up a box when you get it right, and back to box 1 when you miss it. Higher boxes come up less often.</p>
+        <div id="boxes" class="boxes"></div>
+
+        <p class="eyebrow">Overall</p>
+        <div class="dash">
+          <div class="dash-cell"><span class="dash-num" id="s-total">0</span><span class="dash-lbl">cards</span></div>
+          <div class="dash-cell"><span class="dash-num" id="s-seen">0</span><span class="dash-lbl">studied</span></div>
+          <div class="dash-cell"><span class="dash-num" id="s-acc">—</span><span class="dash-lbl">accuracy</span></div>
+        </div>
+
+        <p class="eyebrow">Backup</p>
+        <p class="hint">iOS can clear a web app's saved data if it goes unused for a while. Export now and then so your history is safe.</p>
+        <div class="backup-row">
+          <button class="ghost" id="export-btn">Export progress</button>
+          <button class="ghost" id="import-btn">Import</button>
+          <input type="file" id="import-file" accept="application/json" hidden />
+        </div>
+        <button class="danger" id="reset-btn">Reset all progress</button>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
